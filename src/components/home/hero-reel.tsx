@@ -122,7 +122,7 @@ export function HeroReel() {
           className="animate-hero-rise eyebrow text-blush"
           style={{ "--delay": "100ms" } as React.CSSProperties}
         >
-          Makeup · Hair · Photography — {site.location.city}, Oregon
+          Makeup · Hair · Photography <br /> {site.location.city}, Oregon
         </p>
         <h1
           id="hero-title"
