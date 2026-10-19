@@ -82,7 +82,7 @@ export function SiteHeader() {
           scrolled ? "h-16" : "h-20",
         )}
       >
-        <Wordmark tone={light ? "light" : "dark"} />
+        <Wordmark tone={light ? "light" : "dark"} preload />
 
         <nav aria-label="Primary" className="hidden lg:block">
           <ul className="flex items-center gap-8">

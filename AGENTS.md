@@ -24,3 +24,5 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Dynamic routes (`/portfolio/[slug]`, `/collections/[slug]`, `/services/[slug]`) use `generateStaticParams` + `export const ensureStatic = "navigation"` so unknown slugs return a real 404 (`dynamicParams` is unavailable with Cache Components).
 - Next 16 keeps previous pages mounted but hidden (React Activity) — in browser tests use `:visible` selectors.
 - Client components reading `useSearchParams` (contact form, moodboard, quiz) must sit inside `<Suspense>`.
+- No enquiry form or API routes: "Enquire" CTAs use `mailto:` links built by `src/lib/mailto.ts` (pre-filled subject/body). Don't reintroduce a backend without being asked.
+- Logo: `src/components/brand.tsx`'s `Wordmark` renders the business's real logo (`src/assets/logo/logo-dark.png` / `logo-light.png`), generated from `assets/legacy-logo.png` by `scripts/process-logo.mjs`. Re-run it only if the source logo file changes.

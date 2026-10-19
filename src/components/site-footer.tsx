@@ -2,7 +2,7 @@ import Link from "next/link";
 import { cacheLife } from "next/cache";
 import { ArrowUpRight } from "lucide-react";
 
-import { InstagramGlyph } from "@/components/brand";
+import { InstagramGlyph, Wordmark } from "@/components/brand";
 import { FooterInvite } from "@/components/footer-invite";
 import { SplitHeading } from "@/components/split-heading";
 import { discoverNav, nav, site } from "@/config/site";
@@ -46,7 +46,8 @@ export function SiteFooter() {
 
         <div className="grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <p className="max-w-xs font-serif text-[1.45rem] leading-snug text-ivory/80 italic">
+            <Wordmark tone="light" className="h-14 sm:h-16" />
+            <p className="mt-6 max-w-xs font-serif text-[1.45rem] leading-snug text-ivory/80 italic">
               Makeup artistry, hair styling and photography by {site.owner} —{" "}
               {site.location.area}.
             </p>

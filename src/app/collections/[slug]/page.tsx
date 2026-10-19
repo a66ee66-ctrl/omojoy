@@ -14,6 +14,7 @@ import {
   getCollection,
 } from "@/content/collections";
 import type { Shape } from "@/content/portfolio";
+import { serviceEnquiryMailto } from "@/lib/mailto";
 import { cn } from "@/lib/utils";
 
 // Render unknown slugs completely before responding so notFound() returns a real 404.
@@ -212,12 +213,14 @@ export default async function CollectionPage({
             })}
         </ul>
         <div className="mt-24 flex flex-wrap justify-center gap-3">
-          <Link
-            href={`/contact?service=${[...new Set(items.flatMap((l) => l.categories))].join(",")}`}
+          <a
+            href={serviceEnquiryMailto([
+              ...new Set(items.flatMap((l) => l.categories)),
+            ])}
             className={buttonVariants({ variant: "brand", size: "cta" })}
           >
             Enquire about a look like this <ArrowUpRight aria-hidden />
-          </Link>
+          </a>
           <Link
             href="/portfolio"
             className={buttonVariants({

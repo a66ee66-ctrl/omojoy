@@ -17,7 +17,7 @@ const columns = [
       "marigold",
       "pearl-updo",
       "the-proposal",
-      "celebration-glam",
+      "monochrome-maternity",
     ],
   },
   {
@@ -26,7 +26,7 @@ const columns = [
     slugs: [
       "maternity-in-studio",
       "braided-crown",
-      "wedding-staircase",
+      "glass-block",
       "rose-shimmer",
       "emerald",
     ],

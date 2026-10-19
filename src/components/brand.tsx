@@ -1,38 +1,33 @@
+import Image from "next/image";
 import Link from "next/link";
 
+import logoDark from "@/assets/logo/logo-dark.png";
+import logoLight from "@/assets/logo/logo-light.png";
 import { SplitHeading } from "@/components/split-heading";
 import { cn } from "@/lib/utils";
 
+/** The business's own logo (from thejoyfulartistry.com), recoloured for light and dark backgrounds. */
 export function Wordmark({
   className,
   tone = "dark",
+  preload = false,
 }: {
   className?: string;
   tone?: "dark" | "light";
+  preload?: boolean;
 }) {
   return (
     <Link
       href="/"
       aria-label="Joyful Artistry — home"
-      className={cn(
-        "group inline-flex items-baseline gap-2 leading-none transition-colors duration-700",
-        tone === "dark" ? "text-espresso" : "text-ivory",
-        className,
-      )}
+      className="group inline-flex items-center transition-opacity duration-500 hover:opacity-80"
     >
-      <span className="font-sans text-[0.62rem] font-semibold tracking-[0.42em] uppercase">
-        Joyful
-      </span>
-      <span
-        className={cn(
-          "font-serif text-[1.65rem] italic tracking-tight transition-colors duration-500",
-          tone === "dark"
-            ? "group-hover:text-rose-deep"
-            : "group-hover:text-blush",
-        )}
-      >
-        Artistry
-      </span>
+      <Image
+        src={tone === "dark" ? logoDark : logoLight}
+        alt="Joyful Artistry"
+        preload={preload}
+        className={cn("h-10 w-auto object-contain sm:h-11", className)}
+      />
     </Link>
   );
 }
